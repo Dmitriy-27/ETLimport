@@ -1,0 +1,22 @@
+services:
+    mysql:
+        image: mysql:8.4
+
+        container_name: wb_mysql
+
+        restart: unless-stopped
+
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: wb_api
+            MYSQL_USER: wb_user
+            MYSQL_PASSWORD: wb_password
+
+        ports:
+            - "3306:3306"
+
+        volumes:
+            - mysql_data:/var/lib/mysql
+
+volumes:
+    mysql_data:
