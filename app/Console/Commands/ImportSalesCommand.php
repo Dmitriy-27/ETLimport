@@ -20,7 +20,7 @@ class ImportSalesCommand extends Command
         $response = Http::get(
             'http://109.73.206.144:6969/api/sales',
             [
-                'dateFrom' => '2024-01-01',
+                'dateFrom' => '2026-07-13',
                 'dateTo' => '2026-12-31',
                 'page' => 1,
                 'limit' => 100,

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->date('date');
             $table->date('last_change_date');
             $table->string('supplier_article');
-            $table->string('tech_size');
-            $table->unsignedBigInteger('barcode');
+            $table->string('tech_size')->nullable();
+            $table->BigInteger('barcode');
             $table->decimal('total_price',10,2);
             $table->integer('discount_percent');
             $table->boolean('is_supply')->default(false);
