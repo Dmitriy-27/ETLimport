@@ -9,7 +9,7 @@ class IncomeRepository
     public function create(IncomeDTO $incomeDTo): Income
     {
         return Income::create([
-            'income_id' => $incomeDTo->income_id,
+            'income_id' => $incomeDTo->incomeId,
             'number' => $incomeDTo->number,
             'date' => $incomeDTo->date,
             'last_change_date' => $incomeDTo->lastChangeDate,

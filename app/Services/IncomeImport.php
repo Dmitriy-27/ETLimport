@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\DTO\OrderDTO;
-use App\Repositories\OrderRepository;
+use App\DTO\IncomeDTO;
+use App\Repositories\IncomeRepository;
 
 class IncomeImport
 {

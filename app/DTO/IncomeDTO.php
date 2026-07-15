@@ -5,7 +5,7 @@ namespace App\DTO;
 readonly class IncomeDTO
 {
     public function __construct(
-        public int     $income_id,
+        public int     $incomeId,
         public ?string $number,
         public string  $date,
         public string  $lastChangeDate,
