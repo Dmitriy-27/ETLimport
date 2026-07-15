@@ -3,39 +3,39 @@
 namespace App\Repositories;
 
 use App\Models\Sales;
-
+use App\DTO\SalesDTO;
 class SalesRepository
 {
-    public function create(salesDTO $salesDTO): sale
+    public function create(SalesDTO $salesDTO): Sales
     {
         return Sales::create([
-            'g_number' => $salesDTO->g_number,
+            'g_number' => $salesDTO->gNumber,
             'date' => $salesDTO->date,
-            'last_change_date' => $salesDTO->last_change_date,
-            'supplier_article' => $salesDTO->supplier_article,
-            'tech_size' => $salesDTO->tech_size,
+            'last_change_date' => $salesDTO->lastChangeDate,
+            'supplier_article' => $salesDTO->supplierArticle,
+            'tech_size' => $salesDTO->techSize,
             'barcode'=> $salesDTO->barcode,
-            'total_price'=> $salesDTO->total_price,
-            'discount_percent' => $salesDTO->discount_percent,
-            'is_supply' => $salesDTO->is_supply,
-            'is_realization' => $salesDTO->is_realization,
-            'promo_code_discount' => $salesDTO->promo_code_discount,
-            'warehouse_name' => $salesDTO->warehouse_name,
-            'country_name' => $salesDTO->country_name,
-            'oblast_okrug_name' => $salesDTO->oblast_okrug_name,
-            'region_name' => $salesDTO->region_name,
-            'income_id' => $salesDTO->income_id,
-            'sale_id' => $salesDTO->sale_id,
+            'total_price'=> $salesDTO->totalPrice,
+            'discount_percent' => $salesDTO->discountPercent,
+            'is_supply' => $salesDTO->isSupply,
+            'is_realization' => $salesDTO->isRealization,
+            'promo_code_discount' => $salesDTO->promoCodeDiscount,
+            'warehouse_name' => $salesDTO->warehouseName,
+            'country_name' => $salesDTO->countryName,
+            'oblast_okrug_name' => $salesDTO->oblastOkrugName,
+            'region_name' => $salesDTO->regionName,
+            'income_id' => $salesDTO->incomeId,
+            'sale_id' => $salesDTO->saleId,
             'odid' => $salesDTO->odid,
-            'spp' => $salesDTO->spp,
-            'for_pay' => $salesDTO->for_pay,
-            'finished_price' => $salesDTO->finished_price,
-            'price_with_disc' => $salesDTO->price_with_disc,
-            'nm_id' => $salesDTO->nm_id,
+            'spp'=> $salesDTO->spp,
+            'for_pay' => $salesDTO->forPay,
+            'finished_price' => $salesDTO->finishedPrice,
+            'price_with_disc' => $salesDTO->priceWithDisc,
+            'nm_id' => $salesDTO->nmId,
             'subject' => $salesDTO->subject,
             'category' => $salesDTO->category,
             'brand' => $salesDTO->brand,
-            'is_storno' => $salesDTO->is_storno,
+            'is_storno' => $salesDTO->isStorno,
         ]);
     }
 }

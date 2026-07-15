@@ -24,7 +24,7 @@ class ImportOrdersCommand extends Command
                 'dateFrom' => '2024-01-01',
                 'dateTo' => '2026-12-31',
                 'page' => 1,
-                'limit' => 10,
+                'limit' => 100,
                 'key' => 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie'
             ]
         );
@@ -50,7 +50,6 @@ class ImportOrdersCommand extends Command
                         isCancel: (bool)$order['is_cancel'],
                         cancelDt: $order['cancel_dt']
                     );
-
                         $this->orderImport->import($dto);
                 }
                 $this->info('Orders imported successfully!');

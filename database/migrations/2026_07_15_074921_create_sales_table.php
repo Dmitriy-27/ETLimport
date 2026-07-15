@@ -35,7 +35,7 @@ return new class extends Migration
             $table->decimal('for_pay',10,2);
             $table->decimal('finished_price',10,2);
             $table->decimal('price_with_disc',10,2);
-            $table->unsignedBigInteger('nm_id');
+            $table->bigInteger('nm_id');
             $table->string('subject');
             $table->string('category');
             $table->string('brand');
