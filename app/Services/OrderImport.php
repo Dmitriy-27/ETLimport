@@ -5,15 +5,14 @@ namespace App\Services;
 use App\DTO\OrderDTO;
 use App\Repositories\OrderRepository;
 
-class IncomeImport
+class OrderImport
 {
     public function __construct(
-        private IncomeRepository $repository
-    )
+        private OrderRepository $repository)
     {
     }
-    public function import(IncomeDTO $incomeDTO)
+    public function import(OrderDTO $orderDTO)
     {
-        return $this->repository->create($incomeDTO);
+        return $this->repository->create($orderDTO);
     }
 }
