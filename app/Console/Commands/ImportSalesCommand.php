@@ -17,13 +17,16 @@ class ImportSalesCommand extends Command
     }
     public function handle()
     {
+        $page = 1;
+        do {
+
         $response = Http::get(
             'http://109.73.206.144:6969/api/sales',
             [
                 'dateFrom' => '2026-07-13',
                 'dateTo' => '2026-12-31',
                 'page' => 1,
-                'limit' => 100,
+                'limit' => 500,
                 'key' => 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie'
             ]
         );
@@ -66,5 +69,11 @@ class ImportSalesCommand extends Command
         }
 
         $this->info('Sales imported successfully!');
+
+        $lastPage = $response->json('meta.last_page');
+
+        $this->info("Imported page {$page} of {$lastPage}");
+        $page++;
+         } while ($page <= $lastPage);
     }
 }

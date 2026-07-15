@@ -21,13 +21,16 @@ class ImportStocksCommand extends Command
     }
     public function handle()
     {
+        $page = 1;
+        do {
+
         $response = Http::get(
             'http://109.73.206.144:6969/api/stocks',
             [
                 'dateFrom' => '2026-07-15',
                 'dateTo' => '2026-12-31',
                 'page' => 1,
-                'limit' => 100,
+                'limit' => 500,
                 'key' => 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie'
             ]
         );
@@ -59,6 +62,10 @@ class ImportStocksCommand extends Command
             $this->stockImport->import($dto);
         }
         $this->info('Stocks imported successfully!');
-    }
+            $lastPage = $response->json('meta.last_page');
 
+            $this->info("Imported page {$page} of {$lastPage}");
+            $page++;
+        } while ($page <= $lastPage);
+    }
 }
