@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('last_change_date')->nullable();
             $table->string('supplier_article');
             $table->string('tech_size')->nullable();
-            $table->bigInteger('barcode');
+            $table->bigInteger('barcode')->nullable();
             $table->integer('quantity')->default(0);
             $table->boolean('is_supply')->nullable();
             $table->boolean('is_realization')->nullable();

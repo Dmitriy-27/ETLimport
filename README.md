@@ -71,5 +71,12 @@ cancel_dt,
     php artisan app:import-orders-command
 
 ** Запуск команды order осуществляется с помощью команды:
-    php artisan app:import-sales-command  
+    php artisan app:import-sales-command 
+
+**Запуск команды incomes осуществляется с помощью команды:
+    php artisan app:import-incomes-command    
+
+**Запуск команды stocks осуществляется с помощью команды:
+    php artisan app:import-stocks-command                                                   
+                                   
 
